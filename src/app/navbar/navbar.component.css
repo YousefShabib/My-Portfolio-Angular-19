@@ -1,0 +1,200 @@
+.navbar {
+  background-color: #f9fafb;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: auto;
+  gap: 20px;
+}
+
+/* اللوجو */
+.logo img {
+  height: 48px;
+  width: auto;
+}
+
+/* الروابط */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  flex: 1;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #1f2937;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-links li a::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #6366f1;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::before {
+  width: 100%;
+}
+
+/* زر الـ Resume */
+.resume-btn {
+  background-color: #6366f1;
+  color: white;
+  padding: 0.55rem 1.3rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.resume-btn:hover {
+  background-color: #4f46e5;
+  transform: translateY(-2px);
+}
+
+/* Burger */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.burger span {
+  height: 3px;
+  width: 25px;
+  background: #333;
+  border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .navbar-container {
+    justify-content: space-between;
+  }
+}
+
+
+
+
+
+
+
+
+/* Mobile Menu Styling */
+.mobile-menu {
+  display: none;
+}
+
+/* Show when active */
+@media (max-width: 768px) {
+  .mobile-menu {
+    position: absolute;
+    top: 100%; /* تظهر مباشرة تحت الشريط العلوي */
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
+
+  .mobile-menu li a {
+    text-decoration: none;
+    color: #1f2937;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .mobile-menu .resume-btn {
+    display: flex;
+    margin-top: 1.5rem;
+    align-self: center;
+    padding: 0.5rem 1.2rem;
+    font-weight: 600;
+    border-radius: 12px;
+    background-color: #6366f1;
+    color: white;
+    text-decoration: none;
+    gap: 0.4rem;
+  }
+
+  .mobile-menu .resume-btn:hover {
+    background-color: #4f46e5;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* ✅ اجعل اللوجو بالوسط */
+  .navbar-container {
+    justify-content: center;
+    position: relative;
+  }
+
+  /* ✅ أخفي زر الـ Resume من الأعلى */
+  .resume-btn {
+    display: none;
+  }
+
+  /* ✅ أظهره فقط داخل القائمة */
+  .mobile-menu .resume-btn {
+    display: flex;
+    margin-top: 2rem;
+  }
+
+  /* ✅ برجر أيقون على اليسار */
+  .burger {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

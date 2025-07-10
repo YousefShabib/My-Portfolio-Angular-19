@@ -1,0 +1,47 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="assets/Logo1.jpeg" alt="Logo" />
+    </div>
+
+    <!-- Links (Desktop only) -->
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Resume Button (Desktop only) -->
+    <a class="resume-btn" href="https://drive.google.com/file/d/1nKfBUnfxEo6EKNM4gtIT3N67vTRvNIz9/view?usp=sharing" target="_blank">
+      <span>My Resume</span> 📄
+    </a>
+
+    <!-- Burger Icon -->
+    <div class="burger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" *ngIf="isMenuOpen">
+    <ul>
+      <li><a href="#home" (click)="toggleMenu()">Home</a></li>
+      <li><a href="#about" (click)="toggleMenu()">About</a></li>
+      <li><a href="#skills" (click)="toggleMenu()">Skills</a></li>
+      <li><a href="#projects" (click)="toggleMenu()">Projects</a></li>
+      <li><a href="#certificates" (click)="toggleMenu()">Certificates</a></li>
+      <li><a href="#contact" (click)="toggleMenu()">Contact</a></li>
+      <li>
+        <a class="resume-btn" href="https://drive.google.com/file/d/1nKfBUnfxEo6EKNM4gtIT3N67vTRvNIz9/view?usp=sharing" target="_blank">
+          My Resume 📄
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

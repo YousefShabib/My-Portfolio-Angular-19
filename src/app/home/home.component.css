@@ -1,0 +1,126 @@
+.home-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* الخلفية كصورة مستقلة */
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* حتى الصورة تظهر يمين */
+  padding: 0 6%;
+  z-index: 1;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.home-content {
+  max-width: 600px;
+  animation: fadeInUp 1s ease;
+}
+
+.home-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.home-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.typed-text {
+  color: #8ab4f8;
+  font-weight: bold;
+}
+
+.subtitle {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+.discover-btn {
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  background-color: #6a5acd;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.discover-btn:hover {
+  background-color: #5a4bcf;
+  transform: scale(1.05);
+}
+
+/* ✅ الصورة الجديدة */
+.image-container {
+  max-width: 40%;
+  display: flex;
+  align-items: flex-end; /* الصورة تبدأ من تحت */
+  height: 100%; /* تمتد لكامل ارتفاع overlay */
+}
+
+.shabib-img {
+  width: 100%;
+  height: auto;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .home-content {
+    text-align: center;
+  }
+
+  .home-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .home-content h2 {
+    font-size: 1.7rem;
+  }
+
+  .image-container {
+    max-width: 80%;
+    margin: 2rem auto 0 auto;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+}
