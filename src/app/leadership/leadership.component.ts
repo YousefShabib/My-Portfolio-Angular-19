@@ -6,13 +6,13 @@ import { RevealDirective } from '../shared/reveal.directive';
 import { SectionHeadingComponent } from '../shared/section-heading/section-heading.component';
 
 @Component({
-  selector: 'app-skills',
+  selector: 'app-leadership',
   standalone: true,
   imports: [SectionHeadingComponent, RevealDirective, InteractiveCardDirective],
-  templateUrl: './skills.component.html',
-  styleUrl: './skills.component.css',
+  templateUrl: './leadership.component.html',
+  styleUrl: './leadership.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SkillsComponent {
-  readonly skillGroups = PORTFOLIO_CONTENT.skillGroups;
+export class LeadershipComponent {
+  readonly leadership = PORTFOLIO_CONTENT.leadership;
 }

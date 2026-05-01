@@ -1,0 +1,41 @@
+<section class="section-shell awards-section">
+  <app-section-heading
+    eyebrow="Awards & competitions"
+    title="Recognized Achievements"
+    description="Competition wins and awards that validate my skills in design, innovation, and engineering."
+  ></app-section-heading>
+
+  <div class="awards-grid">
+    @for (award of awards; track award.title; let index = $index) {
+      <article
+        class="award-card glass-card"
+        [class.is-emerald]="award.accent === 'emerald'"
+        [class.is-amber]="award.accent === 'amber'"
+        [class.is-violet]="award.accent === 'violet'"
+        appReveal
+        appInteractiveCard
+        [appInteractiveCard]="10"
+        [appInteractiveScale]="1.02"
+        [appRevealDelay]="(index * 90) + 'ms'"
+      >
+        <div class="award-top">
+          <span class="award-icon">
+            <i class="{{ award.iconClass }}" aria-hidden="true"></i>
+          </span>
+          <span class="award-date">{{ award.date }}</span>
+        </div>
+
+        <h3>{{ award.title }}</h3>
+        <p class="award-org">{{ award.organization }}</p>
+        <span class="award-badge">{{ award.badge }}</span>
+        <p class="award-summary">{{ award.summary }}</p>
+
+        <ul class="bullet-list award-list">
+          @for (bullet of award.bullets; track bullet) {
+            <li>{{ bullet }}</li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+</section>

@@ -1,0 +1,90 @@
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.award-card {
+  min-height: 100%;
+  padding: 1.9rem;
+}
+
+.award-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.award-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 1.2rem;
+  background: var(--tone-soft);
+  color: var(--tone);
+  border: 1px solid color-mix(in srgb, var(--tone) 26%, transparent);
+  font-size: 1.5rem;
+}
+
+.award-date {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.award-card h3 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  line-height: 1.2;
+}
+
+.award-org,
+.award-summary {
+  margin: 0.6rem 0 0;
+}
+
+.award-org {
+  color: var(--muted);
+}
+
+.award-badge {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 1.2rem;
+  padding: 0.7rem 1rem;
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--tone) 14%, var(--surface-elevated));
+  color: var(--tone);
+  font-weight: 800;
+}
+
+.award-summary {
+  color: var(--muted);
+}
+
+.award-list {
+  --list-color: var(--tone);
+}
+
+.is-emerald {
+  --tone: #28c76f;
+  --tone-soft: rgba(40, 199, 111, 0.14);
+}
+
+.is-amber {
+  --tone: #f59e0b;
+  --tone-soft: rgba(245, 158, 11, 0.14);
+}
+
+.is-violet {
+  --tone: #7c4dff;
+  --tone-soft: rgba(124, 77, 255, 0.14);
+}
+
+@media (max-width: 1100px) {
+  .awards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+}

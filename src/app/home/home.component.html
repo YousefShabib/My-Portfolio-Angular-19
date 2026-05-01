@@ -1,17 +1,73 @@
-<div class="home-container">
-  <img class="bg-image" src="assets/image1.png" alt="Background" />
+<div class="section-shell hero-shell">
+  <div class="hero-copy" appReveal>
+    <span class="hero-eyebrow">
+      <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+      {{ hero.eyebrow }}
+    </span>
 
-  <div class="overlay">
-    <div class="home-content">
-      <h1>Welcome to my portfolio</h1>
-      <h2>I'm Yousef Shabib <span class="typed-text"></span></h2>
-      <p class="subtitle">Discover who I am and what I create.</p>
-      <button class="discover-btn" (click)="scrollToAbout()">Discover Me</button>
+    <p class="hero-kicker">Hi, I'm</p>
+
+    <h1 class="hero-title">
+      <span>Yousef</span>
+      <span class="hero-title-accent">Shabib</span>
+    </h1>
+
+    <div class="hero-roles" [attr.aria-label]="person.title">
+      <span class="typed-role role-one">&gt; Frontend Developer</span>
+      <span class="typed-role role-two">&gt; QA Engineer</span>
+      <span class="typed-role role-three">&gt; UX/UI Designer</span>
+    </div>
+    <p class="hero-description">{{ hero.description }}</p>
+
+    <div class="hero-actions">
+      <button class="button" type="button" appMagnetic (click)="scrollToAbout()">Discover Me</button>
+      <a class="button-secondary" appMagnetic [href]="person.resumeUrl" target="_blank" rel="noopener noreferrer">
+        View Resume
+      </a>
     </div>
 
-    <!-- ✅ New image section -->
-    <div class="image-container">
-      <img src="assets/Shabib.png" alt="Shabib" class="shabib-img" />
+    <div class="hero-socials">
+      <span class="social-label">Connect</span>
+      <span class="social-divider" aria-hidden="true"></span>
+
+      @for (link of socialLinks; track link.label) {
+        <a appMagnetic [appMagnetic]="16" [href]="link.href" [attr.aria-label]="'Open ' + link.label" target="_blank" rel="noopener noreferrer">
+          <i class="{{ link.iconClass }}" aria-hidden="true"></i>
+        </a>
+      }
     </div>
   </div>
+
+  <div class="hero-visual" appReveal [appRevealDelay]="'140ms'">
+    <div class="portrait-stage">
+      <div class="portrait-glow"></div>
+
+      <div class="portrait-card" appInteractiveCard [appInteractiveCard]="8" [appInteractiveScale]="1.012">
+        <img
+          src="assets/Shabib.png"
+          alt="Portrait of Yousef Shabib"
+          class="portrait-image"
+          fetchpriority="high"
+          decoding="async"
+          width="740"
+          height="980"
+        />
+        <span class="location-tag">{{ person.location }}</span>
+      </div>
+    </div>
+
+    <div class="stat-grid">
+      @for (stat of heroStats; track stat.label; let index = $index) {
+        <article class="stat-card" appInteractiveCard [appInteractiveCard]="10" [appInteractiveScale]="1.03" [style.--stat-delay]="(index * 90) + 'ms'">
+          <strong>{{ stat.value }}</strong>
+          <span>{{ stat.label }}</span>
+        </article>
+      }
+    </div>
+  </div>
+
+  <a class="scroll-cue" href="#about" aria-label="Scroll to About section">
+    <span>Scroll</span>
+    <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+  </a>
 </div>

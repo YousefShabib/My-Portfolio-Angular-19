@@ -1,47 +1,55 @@
-<!-- Contact Section Start -->
-<section class="contact-section">
-    <h2 class="contact-title">Get in Touch</h2>
-  
-    <div class="contact-grid">
-      <div class="contact-box">
-        <i class="fas fa-phone icon"></i>
-        <h3>Phone</h3>
-        <p>+972599776426</p>
-      </div>
-  
-      <div class="contact-box">
-        <i class="fas fa-envelope icon"></i>
-        <h3>Email</h3>
-        <p><a href="mailto:yousefshubib@gmail.com">yousefshubib&#64;gmail.com</a></p>
-      </div>
-  
-      <div class="contact-box">
-        <i class="fas fa-map-marker-alt icon"></i>
-        <h3>Location</h3>
-        <p>Burqa, Nablus</p>
-      </div>
-  
-      <div class="contact-box">
-        <i class="fas fa-share-alt icon"></i>
-        <h3>Social</h3>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/yshabib22/" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.instagram.com/y_shabib22/" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.behance.net/yousefshabib" target="_blank"><i class="fab fa-behance"></i></a>
-          <a href="https://www.datacamp.com/portfolio/s12217432" target="_blank"><i class="fas fa-database"></i></a>
+<section class="section-shell contact-section">
+  <app-section-heading
+    eyebrow="Contact"
+    title="Let's Connect"
+    description="Open to internships, freelance work, and collaborative projects. Reach out anytime."
+  ></app-section-heading>
+
+  <div class="contact-grid">
+    @for (item of contactMethods; track item.label; let index = $index) {
+      <article class="contact-card glass-card" appReveal appInteractiveCard [appInteractiveCard]="9" [appInteractiveScale]="1.018" [appRevealDelay]="(index * 70) + 'ms'">
+        <span class="contact-icon">
+          <i class="{{ item.iconClass }}" aria-hidden="true"></i>
+        </span>
+
+        <div>
+          <p class="contact-label">{{ item.label }}</p>
+
+          @if (item.href) {
+            <a
+              class="contact-value"
+              [href]="item.href"
+              [attr.target]="item.href.startsWith('http') ? '_blank' : null"
+              [attr.rel]="item.href.startsWith('http') ? 'noopener noreferrer' : null"
+            >
+              {{ item.value }}
+            </a>
+          } @else {
+            <p class="contact-value">{{ item.value }}</p>
+          }
+
+          <p class="contact-description">{{ item.description }}</p>
         </div>
-      </div>
-    </div>
-  
-    <form class="contact-form">
-      <div class="form-row">
-        <input type="text" placeholder="Name" required>
-        <input type="email" placeholder="Email" required>
-      </div>
-      <input type="text" placeholder="Subject" required>
-      <textarea placeholder="Your Message" rows="6" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-  <!-- Contact Section End -->
-  
+      </article>
+    }
+  </div>
+
+  <div class="contact-actions" appReveal [appRevealDelay]="'220ms'">
+    <a class="button-secondary contact-action" appMagnetic [href]="person.githubUrl" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-github" aria-hidden="true"></i>
+      GitHub
+    </a>
+    <a class="button-secondary contact-action" appMagnetic [href]="person.linkedinUrl" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+      LinkedIn
+    </a>
+    <a class="button contact-action" appMagnetic [href]="person.resumeUrl" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+      My Resume
+    </a>
+  </div>
+
+  <p class="contact-note">
+    Based in {{ person.location }} · Open to remote and local opportunities
+  </p>
+</section>

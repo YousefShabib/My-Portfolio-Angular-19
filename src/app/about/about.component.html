@@ -1,63 +1,81 @@
-<section class="about-section">
-  <div class="about-container">
-    <!-- Right Side: Introduction -->
-    <div class="intro">
-      <h2>About Me</h2>
-      <p>
-        I'm Yousef Shabib, a passionate Software Engineering student who enjoys building
-        user-centric web applications and exploring new technologies.
-      </p>
-      <p>
-        I strive to create digital experiences that are functional, elegant, and intuitive.
-      </p>
-      <p>
-        Always eager to learn and contribute in collaborative and fast-paced environments.
-      </p>
+<section class="section-shell about-section">
+  <app-section-heading
+    eyebrow="About me"
+    title="Who I Am"
+    description="Passionate about building user-centric products at the intersection of design, code, and quality."
+    [centered]="false"
+  ></app-section-heading>
+
+  <div class="about-grid">
+    <div class="about-copy" appReveal>
+      <div class="copy-stack">
+        @for (paragraph of aboutParagraphs; track paragraph) {
+          <p>{{ paragraph }}</p>
+        }
+      </div>
+
+      <div class="strengths-block">
+        <h3>Core Strengths</h3>
+        <div class="strengths-list">
+          @for (strength of strengths; track strength) {
+            <span class="strength-chip">
+              <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
+              {{ strength }}
+            </span>
+          }
+        </div>
+      </div>
     </div>
 
-    <!-- Left Side: Education & Experience -->
-    <div class="edu-exp">
-      <div class="education">
-        <h3>Education</h3>
-        <div class="edu-item">
-          <img src="assets/Najah.png" alt="University Logo">
-          <div>
-            <strong>An-Najah National University </strong><br>
-            Bachelor's degree,in Computer Science Apprenticeship - Software specialization <br>
-            Sep 2022 - Expected Sep 2026
-          </div>
-        </div>
-        <div class="edu-item">
-          <img src="assets/Burqa.png" alt="School Logo">
-          <div>
-            <strong>Burqa Secondary School</strong><br>
-            Tawjihi Certificate, Science Track<br>
-            Aug 2021 - Aug 2022
-          </div>
-        </div>
-      </div>
+    <div class="about-panels">
+      <article class="detail-group" appReveal [appRevealDelay]="'80ms'">
+        <h3 class="detail-heading">
+          <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+          Education
+        </h3>
 
-      <div class="experience">
-        <h3>Experience</h3>
-        <div class="edu-item">
-          <img src="assets/Asal.png" alt="Asal Icon">
-          <div>
-            <strong>Asal Technologies</strong><br>
-            Frontend Developer Intern <br>
-            Jul 2025 - Sep 2025
-          </div>
+        <div class="detail-list">
+          @for (entry of education; track entry.institution) {
+            <article class="detail-card glass-card" appInteractiveCard [appInteractiveCard]="10" [appInteractiveScale]="1.018">
+              @if (entry.logo) {
+                <img [src]="entry.logo" [alt]="entry.institution + ' logo'" width="72" height="72" />
+              }
+
+              <div>
+                <h4>{{ entry.institution }}</h4>
+                <p>{{ entry.program }}</p>
+                @if (entry.details) {
+                  <p class="detail-note">{{ entry.details }}</p>
+                }
+                <span>{{ entry.period }}</span>
+              </div>
+            </article>
+          }
         </div>
-        <div class="edu-item">
-          <img src="assets/Muhjah.png" alt="Muhja Icon">
-          <div>
-            <strong>Frontend Developer</strong><br>
-            Frontend Developer<br>
-            Student Company, An-Najah National University 2025<br>
-            Frontend web development and UX/UI for web and mobile platforms<br>
-            Dec 2024 - Present
-          </div>
+      </article>
+
+      <article class="detail-group" appReveal [appRevealDelay]="'160ms'">
+        <h3 class="detail-heading detail-heading-warm">
+          <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+          Experience
+        </h3>
+
+        <div class="detail-list">
+          @for (entry of experience; track entry.organization) {
+            <article class="detail-card glass-card" appInteractiveCard [appInteractiveCard]="10" [appInteractiveScale]="1.018">
+              @if (entry.logo) {
+                <img [src]="entry.logo" [alt]="entry.organization + ' logo'" width="72" height="72" />
+              }
+
+              <div>
+                <h4>{{ entry.role }}</h4>
+                <p>{{ entry.organization }}</p>
+                <span>{{ entry.period }}</span>
+              </div>
+            </article>
+          }
         </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>

@@ -1,36 +1,38 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
-import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { SkillsComponent } from './skills/skills.component';
-import { ProjectsComponent } from './projects/projects.component';
+import { AwardsComponent } from './awards/awards.component';
 import { CertificatesComponent } from './certificates/certificates.component';
+import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
-import { LocationComponent } from './location/location.component';
-
-
+import { HomeComponent } from './home/home.component';
+import { LeadershipComponent } from './leadership/leadership.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ParticleBackgroundComponent } from './shared/particle-background/particle-background.component';
+import { SkillsComponent } from './skills/skills.component';
+import { SmoothScrollService } from './shared/smooth-scroll.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterModule,
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent,
     SkillsComponent,
     ProjectsComponent,
+    LeadershipComponent,
+    AwardsComponent,
     CertificatesComponent,
-    LocationComponent,
-    FooterComponent 
+    ContactComponent,
+    ParticleBackgroundComponent,
+    FooterComponent
   ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  title = 'yousef';
+  private readonly smoothScroll = inject(SmoothScrollService);
 }

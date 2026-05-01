@@ -1,47 +1,76 @@
 <nav class="navbar">
-  <div class="navbar-container">
-    <!-- Logo -->
-    <div class="logo">
-      <img src="assets/Logo1.jpeg" alt="Logo" />
-    </div>
-
-    <!-- Links (Desktop only) -->
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <!-- Resume Button (Desktop only) -->
-    <a class="resume-btn" href="https://drive.google.com/file/d/1nKfBUnfxEo6EKNM4gtIT3N67vTRvNIz9/view?usp=sharing" target="_blank">
-      <span>My Resume</span> 📄
+  <div class="navbar-shell">
+    <a class="brand" href="#home" (click)="selectNav('#home')">
+      <img src="assets/Logo1.jpeg" alt="Yousef Shabib logo" width="80" height="80" />
+      <span>{{ person.name }}</span>
     </a>
 
-    <!-- Burger Icon -->
-    <div class="burger" (click)="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+    <ul class="nav-links" aria-label="Primary navigation">
+      @for (item of navItems; track item.href) {
+        <li>
+          <a
+            [href]="item.href"
+            [class.is-active]="activeSection() === item.href.replace('#', '')"
+            (click)="selectNav(item.href)"
+          >
+            {{ item.label }}
+          </a>
+        </li>
+      }
+    </ul>
+
+    <div class="nav-actions">
+      <button
+        class="theme-toggle"
+        type="button"
+        appMagnetic
+        [appMagnetic]="18"
+        (click)="toggleTheme()"
+        [attr.aria-label]="isDarkMode() ? 'Switch to light mode' : 'Switch to dark mode'"
+      >
+        <i class="fa-solid" [class.fa-sun]="isDarkMode()" [class.fa-moon]="!isDarkMode()"></i>
+      </button>
+
+      <a class="resume-link" appMagnetic [href]="person.resumeUrl" target="_blank" rel="noopener noreferrer">
+        <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+        <span>Resume</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-label="Toggle navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </div>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" *ngIf="isMenuOpen">
-    <ul>
-      <li><a href="#home" (click)="toggleMenu()">Home</a></li>
-      <li><a href="#about" (click)="toggleMenu()">About</a></li>
-      <li><a href="#skills" (click)="toggleMenu()">Skills</a></li>
-      <li><a href="#projects" (click)="toggleMenu()">Projects</a></li>
-      <li><a href="#certificates" (click)="toggleMenu()">Certificates</a></li>
-      <li><a href="#contact" (click)="toggleMenu()">Contact</a></li>
-      <li>
-        <a class="resume-btn" href="https://drive.google.com/file/d/1nKfBUnfxEo6EKNM4gtIT3N67vTRvNIz9/view?usp=sharing" target="_blank">
-          My Resume 📄
-        </a>
-      </li>
-    </ul>
-  </div>
+  @if (isMenuOpen()) {
+    <div class="mobile-panel">
+      <ul aria-label="Mobile navigation">
+        @for (item of navItems; track item.href) {
+          <li>
+            <a
+              [href]="item.href"
+              [class.is-active]="activeSection() === item.href.replace('#', '')"
+              (click)="selectNav(item.href)"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+        <li>
+          <a class="mobile-resume" appMagnetic [href]="person.resumeUrl" target="_blank" rel="noopener noreferrer">
+            <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+            Resume
+          </a>
+        </li>
+      </ul>
+    </div>
+  }
 </nav>

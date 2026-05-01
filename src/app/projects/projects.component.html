@@ -1,63 +1,68 @@
-<div class="projects-container">
-  <h2 class="projects-title">Projects</h2>
+<section class="section-shell projects-section">
+  <app-section-heading
+    eyebrow="Projects"
+    title="Featured Work"
+    description="A selection of projects showcasing frontend engineering, QA automation, and full-stack development."
+    [centered]="false"
+  ></app-section-heading>
 
-  <!-- Project 1 -->
-  <div class="project-card">
-    <div class="project-image">
-      <img src="assets/web2.png" alt="Online Booking System" />
-    </div>
-    <div class="project-content">
-      <h3>Online Clinical Booking System</h3>
-      <p>
-        Full-stack web app for online appointment booking using <strong>React</strong> and <strong>Laravel</strong>.<br />
-        Includes Supabase for backend and Figma for UI/UX.
-      </p>
-      <a href="https://login-yousef-complete-ww5a.vercel.app/" class="project-button" target="_blank">Visit Website ↗</a>
-    </div>
-  </div>
+  <div class="projects-grid">
+    @for (project of projects; track project.title; let index = $index) {
+      <article class="project-card glass-card {{ project.coverClass }}" appReveal appInteractiveCard [appInteractiveCard]="9" [appInteractiveScale]="1.014" [appRevealDelay]="(index * 90) + 'ms'">
+        <div class="project-media">
+          <span class="project-category">{{ project.category }}</span>
 
-  <!-- Project 2 -->
-  <div class="project-card">
-    <div class="project-image">
-      <img src="assets/Realestate.png" alt="Real Estate Management System" />
-    </div>
-    <div class="project-content">
-      <h3>Real Estate Management System</h3>
-      <p>
-        JavaFX desktop app with property filters, authentication, and design patterns like DAO, Singleton, Factory & Hibernate.  
-        MySQL DB, GitHub version control, and UI designed in Figma.
-      </p>
-      <a href="https://github.com/YousefShabib/Real-Estate-Management-System" class="project-button" target="_blank">Visit Website ↗</a>
-    </div>
-  </div>
+          @if (project.image) {
+            <img [src]="project.image" [alt]="project.imageAlt || project.title" width="960" height="540" />
+          } @else {
+            <div class="project-mark">
+              <i class="{{ project.iconClass }}" aria-hidden="true"></i>
+            </div>
+          }
+        </div>
 
-  <!-- Project 3 -->
-  <div class="project-card">
-    <div class="project-image">
-      <img src="assets/water.png" alt="Water Tracker App" />
-    </div>
-    <div class="project-content">
-      <h3>Water Tracker App</h3>
-      <p>
-        UX/UI prototype for tracking water pollution in Palestine.  
-        Includes data visualization, educational tools, and water recycling suggestions.
-      </p>
-      <a href="https://www.behance.net/gallery/211660325/water-tracker-project" class="project-button" target="_blank">Visit Website ↗</a>
-    </div>
-  </div>
+        <div class="project-body">
+          <div class="project-heading-row">
+            <h3>{{ project.title }}</h3>
+            <span class="project-period">{{ project.period }}</span>
+          </div>
 
-  <!-- Project 4 -->
-  <div class="project-card">
-    <div class="project-image">
-      <img src="assets/Aman.png" alt="AmanPay" />
-    </div>
-    <div class="project-content">
-      <h3>AmanPay</h3>
-      <p>
-        Innovative e-wallet for shared expenses and seamless split payments.  
-        Cross-platform compatible, includes technical SRS docs and smart design.
-      </p>
-      <a href="https://github.com/YousefShabib/Aman-Pay-SRS" class="project-button" target="_blank">Visit Website ↗</a>
-    </div>
+          <p class="project-summary">{{ project.summary }}</p>
+
+          <ul class="bullet-list project-highlights">
+            @for (highlight of project.highlights; track highlight) {
+              <li>{{ highlight }}</li>
+            }
+          </ul>
+
+          <div class="project-stack">
+            @for (item of project.stack; track item) {
+              <span class="chip">{{ item }}</span>
+            }
+          </div>
+
+          <div class="project-links">
+            @for (link of project.links; track link.url) {
+              <a
+                class="project-link"
+                [class.is-primary]="link.label === 'Live Demo'"
+                appMagnetic
+                [appMagnetic]="18"
+                [href]="link.url"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @if (link.label === 'GitHub') {
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                } @else {
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                }
+                {{ link.label }}
+              </a>
+            }
+          </div>
+        </div>
+      </article>
+    }
   </div>
-</div>
+</section>

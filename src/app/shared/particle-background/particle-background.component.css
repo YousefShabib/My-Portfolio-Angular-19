@@ -1,0 +1,56 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.background-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0.82;
+}
+
+.background-layer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, color-mix(in srgb, var(--primary) 22%, transparent) 1px, transparent 1.6px);
+  background-position: 0 0;
+  background-size: 3.4rem 3.4rem;
+  opacity: 0.18;
+  mask-image: radial-gradient(circle at 44% 34%, #000 0 42%, transparent 78%);
+}
+
+.background-layer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--primary) 18%, transparent), transparent 28%),
+    radial-gradient(circle at 80% 28%, color-mix(in srgb, #7d6cff 13%, transparent), transparent 31%);
+  filter: blur(18px);
+  opacity: 0.4;
+}
+
+.network-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  mix-blend-mode: screen;
+}
+
+@media (max-width: 720px) {
+  .background-layer {
+    opacity: 0.62;
+  }
+
+  .background-layer::before {
+    background-size: 2.8rem 2.8rem;
+  }
+}

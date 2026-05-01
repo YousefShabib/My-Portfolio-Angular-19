@@ -1,56 +1,50 @@
-<section class="certificates-section" id="certificates">
-    <h2 class="certificates-title">Professional Development & Certificates</h2>
-  
-    <div class="certificates-glass-grid">
-  
-      <div class="glass-card">
-        <div class="glass-content">
-          <h3>Delivering Quality Work with Agility</h3>
-          <p>IBM by Coursera – <span class="date">May 2025</span></p>
+<section class="section-shell certificates-section">
+  <app-section-heading
+    eyebrow="Certificates"
+    title="Credentials & Learning"
+    description="Continuous learning through recognized online platforms, certifications, and programs."
+  ></app-section-heading>
+
+  <div class="certificates-grid">
+    @for (certificate of certificates; track certificate.title; let index = $index) {
+      <article
+        class="certificate-card glass-card"
+        [class.tone-blue]="index % 4 === 0"
+        [class.tone-red]="index % 4 === 1"
+        [class.tone-teal]="index % 4 === 2"
+        [class.tone-violet]="index % 4 === 3"
+        appReveal
+        appInteractiveCard
+        [appInteractiveCard]="9"
+        [appInteractiveScale]="1.018"
+        [appRevealDelay]="(index * 70) + 'ms'"
+      >
+        <div class="certificate-top">
+          <div class="issuer">
+            <span class="issuer-icon">
+              <i class="fa-regular fa-award" aria-hidden="true"></i>
+            </span>
+            <span>{{ certificate.issuer }}</span>
+          </div>
+          <span class="certificate-date">{{ certificate.date }}</span>
         </div>
-        <a class="glass-link" href="https://www.coursera.org/account/accomplishments/verify/G2WGCQMYHS32" target="_blank">🎓 View Certificate</a>
-      </div>
-  
-      <div class="glass-card">
-        <div class="glass-content">
-          <h3>GIZA: Pyramids of Giza – Ancient Egyptian Art</h3>
-          <p>HarvardX via edX – <span class="date">May 2025</span></p>
-        </div>
-        <a class="glass-link" href="https://courses.edx.org/certificates/1ffd515d27004215b66510c64c59be5c?_gl=1*xx58ae*_gcl_au*MzkxODU3MTI0LjE3NDU0MDg5ODA.*_ga*MzAyMTA1NzMwLjE3NDE2MzYzNzM.*_ga_D3KS4KMDT0*czE3NTE5MjgwNzkkbzIwJGcxJHQxNzUxOTI4MTI0JGoxNSRsMCRoMA.." target="_blank">🎓 View Certificate</a>
-      </div>
-  
-      <div class="glass-card">
-        <div class="glass-content">
-          <h3>30-hours Cloud Computing & AWS Fundamentals</h3>
-          <p>Gaza Sky Geeks – <span class="date">Mar 2025</span></p>
-        </div>
-        <a class="glass-link" href="https://www.linkedin.com/posts/yousef-shabib_aws-certificate-activity-7323368292482531330-tWDa?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEkd-3IBsrtlQaAtQ6MkYMzfLfoWxIGIiUs" target="_blank">🎓 View Certificate</a>
-      </div>
-  
-      <div class="glass-card">
-        <div class="glass-content">
-          <h3>10-hours AWS Cloud Practitioner (CLF-C02)</h3>
-          <p>Track - DataCamp – <span class="date">Feb 2025</span></p>
-        </div>
-        <a class="glass-link" href="https://www.datacamp.com/completed/statement-of-accomplishment/track/2249251b81d43aa9f594b3d1e5da6b4eb202a459" target="_blank">🎓 View Certificate</a>
-      </div>
-  
-      <div class="glass-card">
-        <div class="glass-content">
-          <h3>Getting Started with Deep Learning</h3>
-          <p>Nvidia Learning– <span class="date">Jan 2025</span></p>
-        </div>
-        <a class="glass-link" href="https://learn.nvidia.com/certificates?id=o2-TC3JtS46Jm0f6NPubNQ" target="_blank">🎓 View Certificate</a>
-      </div>
-  
-      <div class="glass-card">
-        <div class="glass-content">
-          <h3>Git & GitHub Training</h3>
-          <p>Noqta – Palestine Technical University – <span class="date">Dec 2024</span></p>
-        </div>
-        <a class="glass-link" href="https://www.linkedin.com/posts/yousef-shabib_git-github-activity-7291837702432256000-uu1t?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEkd-3IBsrtlQaAtQ6MkYMzfLfoWxIGIiUs" target="_blank">🎓 View Certificate</a>
-      </div>
-  
-    </div>
-  </section>
-  
+
+        <h3>{{ certificate.title }}</h3>
+
+        @if (certificate.note) {
+          <p class="certificate-note">
+            <i class="fa-regular fa-book-open" aria-hidden="true"></i>
+            {{ certificate.note }}
+          </p>
+        }
+
+        @if (certificate.link) {
+          <a class="certificate-link" [href]="certificate.link" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            View Certificate
+          </a>
+        }
+      </article>
+    }
+  </div>
+</section>

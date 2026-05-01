@@ -1,39 +1,20 @@
 <footer class="footer">
-    <div class="footer-container">
-  
-      <div class="footer-brand">
-        <img src="assets/Logo1.jpeg" alt="Logo" />
-        <h3>Yousef Shabib</h3>
-        <p>Passionate Software Engineering Student | Web Developer</p>
-      </div>
-  
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#certificates">Certificates</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-  
-      <div class="footer-social">
-        <h4>Follow Me</h4>
-        <div class="social-icons">
-          <a href="https://github.com/YousefShabib" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/yousef-shabib" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.facebook.com/yshabib22/" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.instagram.com/y_shabib22/" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.behance.net/yousefshabib" target="_blank"><i class="fab fa-behance"></i></a>
-        </div>
-      </div>
-  
+  <div class="footer-shell">
+    <div class="footer-brand">
+      <img src="assets/Logo1.jpeg" alt="Yousef Shabib logo" width="72" height="72" />
+      <span>{{ person.name }}</span>
     </div>
-  
-    <div class="footer-bottom">
-      <p>&copy; 2025 Yousef Shabib. All rights reserved.</p>
+
+    <p class="footer-copy">
+      © 2026 {{ person.name }} · Frontend Developer · QA Engineer · UX/UI Designer
+    </p>
+
+    <div class="footer-socials">
+      @for (link of socialLinks; track link.label) {
+        <a appMagnetic [appMagnetic]="14" [href]="link.href" [attr.aria-label]="'Open ' + link.label" target="_blank" rel="noopener noreferrer">
+          <i class="{{ link.iconClass }}" aria-hidden="true"></i>
+        </a>
+      }
     </div>
-  </footer>
-  
+  </div>
+</footer>

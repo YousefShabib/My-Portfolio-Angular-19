@@ -6,6 +6,8 @@ import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { CertificatesComponent } from './certificates/certificates.component';
 import { LocationComponent } from './location/location.component';
+import { LeadershipComponent } from './leadership/leadership.component';
+import { AwardsComponent } from './awards/awards.component';
 
 
 export const routes: Routes = [
@@ -14,8 +16,9 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'skills', component: SkillsComponent },
   { path: 'projects', component: ProjectsComponent },
+  { path: 'leadership', component: LeadershipComponent },
+  { path: 'awards', component: AwardsComponent },
   { path: 'certificates', component: CertificatesComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'location', component: LocationComponent },
-
+  { path: 'location', component: LocationComponent }
 ];

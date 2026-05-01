@@ -1,0 +1,52 @@
+:host {
+  display: block;
+  position: relative;
+  isolation: isolate;
+}
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: clip;
+}
+
+.page-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section {
+  min-height: 100vh;
+}
+
+.ambient {
+  position: fixed;
+  inset: auto;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(60px);
+  opacity: 0.6;
+}
+
+.ambient-top {
+  top: -8rem;
+  left: -6rem;
+  width: 22rem;
+  height: 22rem;
+  background: radial-gradient(circle, color-mix(in srgb, var(--primary) 22%, transparent), transparent 72%);
+}
+
+.ambient-side {
+  top: 22rem;
+  right: -4rem;
+  width: 24rem;
+  height: 24rem;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%);
+}
+
+@media (max-width: 768px) {
+  .ambient-top,
+  .ambient-side {
+    opacity: 0.35;
+  }
+}

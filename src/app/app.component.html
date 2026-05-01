@@ -1,32 +1,43 @@
-<app-navbar></app-navbar>
+<div class="app-shell">
+  <app-particle-background></app-particle-background>
+  <div class="ambient ambient-top"></div>
+  <div class="ambient ambient-side"></div>
 
-<section id="home">
-  <app-home></app-home>
-</section>
+  <app-navbar></app-navbar>
 
-<section id="about">
-  <app-about></app-about>
-</section>
+  <main class="page-shell">
+    <section id="home" class="hero-section">
+      <app-home></app-home>
+    </section>
 
-<section id="skills">
-  <app-skills></app-skills>
-</section>
+    <section id="about">
+      <app-about></app-about>
+    </section>
 
-<section id="projects">
-  <app-projects></app-projects>
-</section>
+    <section id="skills">
+      <app-skills></app-skills>
+    </section>
 
-<section id="certificates">
-  <app-certificates></app-certificates>
-</section>
+    <section id="projects">
+      <app-projects></app-projects>
+    </section>
 
-<section id="contact">
-  <app-contact></app-contact>
-</section>
+    <section id="leadership">
+      <app-leadership></app-leadership>
+    </section>
 
+    <section id="awards">
+      <app-awards></app-awards>
+    </section>
 
-<section id="location">
-  <app-location></app-location>
-</section>
+    <section id="certificates">
+      <app-certificates></app-certificates>
+    </section>
 
-<app-footer></app-footer>
+    <section id="contact">
+      <app-contact></app-contact>
+    </section>
+  </main>
+
+  <app-footer></app-footer>
+</div>
