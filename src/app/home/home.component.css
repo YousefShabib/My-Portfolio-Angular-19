@@ -221,6 +221,7 @@
   text-align: center;
   animation: stat-rise 600ms ease both;
   animation-delay: var(--stat-delay, 0ms);
+  min-width: 0;
 }
 
 .stat-card:hover strong {
@@ -238,8 +239,10 @@
   display: block;
   margin-top: 0.7rem;
   color: var(--muted);
+  font-size: clamp(0.9rem, 1.35vw, 1rem);
   font-weight: 700;
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .scroll-cue {

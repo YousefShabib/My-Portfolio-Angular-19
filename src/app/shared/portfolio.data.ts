@@ -121,7 +121,7 @@ export const PORTFOLIO_CONTENT = {
     extendedSummary:
       'Known for adaptability, initiative, and building scalable, high-quality digital products.',
     resumeUrl:
-      'https://drive.google.com/file/d/14NOzWeRmbclABPBLQ2eemEBIBZ1ms8Cn/view?usp=sharing',
+      'https://drive.google.com/file/d/1AqlFtOZxghog-s8l1u4Edr8znZW6T6p9/view?usp=sharing',
     portfolioUrl: 'https://my-portfolio-angular-19.vercel.app/',
     githubUrl: 'https://github.com/YousefShabib',
     linkedinUrl: 'https://www.linkedin.com/in/yousef-shabib/'
@@ -135,7 +135,7 @@ export const PORTFOLIO_CONTENT = {
   heroStats: [
     { value: '5', label: 'Featured projects' },
     { value: '3', label: 'Award wins' },
-    { value: '20+', label: 'Tools & technologies' }
+    { value: '20+', label: 'Tools & Tech' }
   ] as readonly HeroStat[],
   aboutParagraphs: [
     'I am a Software Engineering student specializing in QA, frontend development, and UX/UI design.',
@@ -343,10 +343,11 @@ export const PORTFOLIO_CONTENT = {
       role: 'Public Relationship Team Head',
       organization: 'An-Najah Innovation Park Ambassadors',
       period: 'Nov 2025 - Present',
-      summary: 'Leading public relations efforts and collaborative initiatives inside the ambassador program.',
+      summary:
+        'Lead PR team activities while supporting the planning, coordination, and execution of university innovation events.',
       bullets: [
-        'Supports community-facing communication and event coordination.',
-        'Represents initiatives through organized outreach and relationship building.'
+        'Organize the PR team, distribute tasks, and support event planning and execution.',
+        'Communicate with companies and institutions to build partnerships, explore sponsorships, and create collaboration opportunities.'
       ],
       iconClass: 'fa-solid fa-bullhorn',
       badge: 'Head'
@@ -355,10 +356,11 @@ export const PORTFOLIO_CONTENT = {
       role: 'Administrative Board Member',
       organization: 'Google Developer Student Clubs (GDSC)',
       period: 'Oct 2025 - Present',
-      summary: 'Administrative board member in the club, contributing across marketing, event organization, public relations, and video editing.',
+      summary:
+        'Administrative board member contributing to technical events, workshops, community activities, and club representation.',
       bullets: [
-        'Organized events and supported outreach activities for the club.',
-        'Built practical experience in marketing, event organization, and public relations.'
+        'Contribute to planning, organizing, and executing technical events, workshops, and community activities.',
+        'Support public relations, partnership building, and represent GDSC in events inside and outside the university.'
       ],
       iconClass: 'fa-brands fa-google',
       badge: 'Board'

@@ -20,6 +20,6 @@ export class HomeComponent {
   readonly socialLinks = PORTFOLIO_CONTENT.socialLinks;
 
   scrollToAbout(): void {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('about')?.scrollIntoView();
   }
 }

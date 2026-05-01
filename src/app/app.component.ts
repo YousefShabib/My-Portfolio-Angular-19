@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { AboutComponent } from './about/about.component';
 import { AwardsComponent } from './awards/awards.component';
@@ -11,7 +11,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ParticleBackgroundComponent } from './shared/particle-background/particle-background.component';
 import { SkillsComponent } from './skills/skills.component';
-import { SmoothScrollService } from './shared/smooth-scroll.service';
 
 @Component({
   selector: 'app-root',
@@ -33,6 +32,4 @@ import { SmoothScrollService } from './shared/smooth-scroll.service';
   styleUrls: ['./app.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
-  private readonly smoothScroll = inject(SmoothScrollService);
-}
+export class AppComponent {}
