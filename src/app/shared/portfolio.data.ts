@@ -112,45 +112,48 @@ export const NAV_ITEMS: readonly NavItem[] = [
 export const PORTFOLIO_CONTENT = {
   person: {
     name: 'Yousef Shabib',
-    title: 'Frontend Developer · QA Engineer · UX/UI Designer',
+    title: 'Aspiring Product Manager · Frontend Developer · QA Engineer · UX/UI Designer',
     location: 'Nablus, Palestine',
     phone: '+970599776426',
     email: 'yousefshubib@gmail.com',
     summary:
-      'Software Engineering student specializing in QA, frontend development, and UX/UI design. Delivers clean, efficient, and reliable software with strong attention to detail.',
+      'Final-year Software Engineering student and proven team leader with hands-on Agile project experience, UX/UI design exposure, and strong technical fluency across frontend, backend, and QA.',
     extendedSummary:
-      'Known for adaptability, initiative, and building scalable, high-quality digital products.',
+      'Comfortable managing backlogs, writing user-facing requirements, and coordinating between designers, engineers, and stakeholders.',
     resumeUrl:
-      'https://drive.google.com/file/d/1AqlFtOZxghog-s8l1u4Edr8znZW6T6p9/view?usp=sharing',
+      'https://drive.google.com/file/d/1bzEhZ3-dtV1vFHSQOo_1ogKRqB6yQuU8/view?usp=sharing',
     portfolioUrl: 'https://my-portfolio-angular-19.vercel.app/',
     githubUrl: 'https://github.com/YousefShabib',
     linkedinUrl: 'https://www.linkedin.com/in/yousef-shabib/'
   },
   hero: {
-    eyebrow: 'QA · Frontend development · UX/UI design',
-    headline: 'Building clean interfaces, reliable software, and scalable digital products.',
+    eyebrow: 'Product management · Frontend development · QA · UX/UI design',
+    headline: 'Building useful products from requirements to reliable delivery.',
     description:
-      'I combine frontend engineering, quality assurance, and UX thinking to deliver responsive products that are visually clear, technically solid, and easy to use.'
+      'I combine product thinking, frontend engineering, quality assurance, and UX design to turn ideas into clear, scalable, user-centered digital products.'
   },
   heroStats: [
-    { value: '5', label: 'Featured projects' },
-    { value: '3', label: 'Award wins' },
-    { value: '20+', label: 'Tools & Tech' }
+    { value: '7', label: 'Featured projects' },
+    { value: '4', label: 'Award wins' },
+    { value: '30+', label: 'Tools & Tech' }
   ] as readonly HeroStat[],
   aboutParagraphs: [
-    'I am a Software Engineering student specializing in QA, frontend development, and UX/UI design.',
-    'My work spans React, React Native, Angular 19, Laravel APIs, automated testing, and Figma-based product design.',
-    'Beyond code, I enjoy leadership, workshop facilitation, and team coordination that helps ideas become reliable, polished products.'
+    'I am a final-year Software Engineering student and aspiring Product Manager with hands-on Agile project experience.',
+    'My work spans React, React Native, Angular 19, Laravel APIs, automated testing, Figma-based product design, and backlog-driven delivery.',
+    'Beyond code, I enjoy cross-functional leadership, stakeholder communication, workshop facilitation, and team coordination that helps ideas become reliable, polished products.'
   ],
   strengths: [
     'Adaptability',
     'Leadership',
+    'Communication',
+    'Stakeholder coordination',
     'Teamwork',
     'Attention to detail',
     'Time management',
     'Continuous learning',
     'Working under pressure',
-    'Problem solving'
+    'Problem solving',
+    'Decision making'
   ],
   education: [
     {
@@ -161,6 +164,18 @@ export const PORTFOLIO_CONTENT = {
     }
   ] as readonly EducationEntry[],
   experience: [
+    {
+      role: 'Part-Time Frontend Developer',
+      organization: 'Bazaard',
+      period: 'Apr 2026 - Jul 2026',
+      summary:
+        'Partnered with stakeholders to improve admin workflows, website usability, and e-commerce template delivery.',
+      bullets: [
+        'Translated business requirements into improved admin workflows for order, product, category, and delivery management.',
+        'Improved usability, performance, and overall user experience of the company main website.',
+        'Designed and delivered three e-commerce store templates while balancing user needs, scope, and delivery timeline.'
+      ]
+    },
     {
       role: 'Frontend Developer',
       organization: 'Muhja - Student Company',
@@ -190,6 +205,11 @@ export const PORTFOLIO_CONTENT = {
   ] as readonly ExperienceEntry[],
   skillGroups: [
     {
+      title: 'Product & Agile',
+      iconClass: 'fa-solid fa-list-check',
+      items: ['Agile/Scrum Fundamentals', 'Backlog Management', 'Prioritization', 'User Story Writing', 'Requirements Gathering', 'Cross-Functional Leadership', 'Stakeholder Communication', 'Data-Informed Decisions']
+    },
+    {
       title: 'Programming Languages',
       iconClass: 'fa-solid fa-code',
       items: ['JavaScript', 'TypeScript', 'PHP', 'Python', 'Java', 'C++', 'C', 'SQL']
@@ -202,7 +222,7 @@ export const PORTFOLIO_CONTENT = {
     {
       title: 'Backend Development',
       iconClass: 'fa-solid fa-server',
-      items: ['Laravel', 'Node.js', 'RESTful APIs', 'MVC Architecture', 'Authentication', 'Authorization']
+      items: ['Laravel', 'Node.js', 'Express.js', 'Django', 'RESTful APIs', 'MVC Architecture', 'Authentication', 'Authorization']
     },
     {
       title: 'Testing & APIs',
@@ -212,20 +232,41 @@ export const PORTFOLIO_CONTENT = {
     {
       title: 'Databases & Hosting',
       iconClass: 'fa-solid fa-database',
-      items: ['MySQL', 'SQLite', 'MongoDB', 'Supabase', 'AWS', 'Vercel', 'GitHub Pages']
+      items: ['MySQL', 'SQLite', 'MongoDB', 'Supabase', 'Firebase', 'AWS', 'Microsoft Azure', 'Vercel', 'GitHub Pages']
     },
     {
       title: 'Tools & Workflow',
       iconClass: 'fa-solid fa-pen-ruler',
-      items: ['Git', 'GitHub', 'Vite', 'Webpack', 'Jira', 'Trello', 'Figma', 'Canva', 'Marketing', 'Event Organization', 'Public Relations', 'macOS', 'Windows']
+      items: ['Git', 'GitHub', 'Vite', 'Webpack', 'Jira', 'Trello', 'Notion', 'Figma', 'Canva', 'Marketing', 'Event Organization', 'Public Relations', 'macOS', 'Windows']
     },
     {
       title: 'Soft Skills',
       iconClass: 'fa-solid fa-people-group',
-      items: ['Adaptability', 'Leadership', 'Teamwork', 'Attention to detail', 'Problem solving']
+      items: ['Adaptability', 'Leadership', 'Communication', 'Analytical Thinking', 'Critical Thinking', 'Teamwork', 'Attention to detail', 'Problem solving', 'Decision making']
     }
   ] as readonly SkillGroup[],
   projects: [
+    {
+      title: 'Adwara Community Service Platform',
+      period: 'Jun 2026',
+      category: 'Microsoft Hackathon Platform',
+      summary:
+        'Built a full-stack community service platform connecting municipalities, universities, supervisors, and students across web, mobile, and backend systems.',
+      stack: ['Next.js', 'React Native', 'Expo', 'Laravel', 'Firebase', 'Firestore', 'REST APIs'],
+      highlights: [
+        'Delivered separate web dashboard, mobile app, and Laravel API layers for role-based community service workflows.',
+        'Integrated Firebase and Firestore synchronization to keep platform data available across the backend and mobile experience.',
+        'Designed the product flow around municipalities, universities, supervisors, and students to organize and track community engagement activities.'
+      ],
+      links: [
+        {
+          label: 'GitHub',
+          url: 'https://github.com/YousefShabib/Microsoft_Hackathon'
+        }
+      ],
+      coverClass: 'azure-cover',
+      iconClass: 'fa-brands fa-microsoft'
+    },
     {
       title: 'Lumixy Mobile App',
       period: 'Apr 2026',
@@ -246,6 +287,27 @@ export const PORTFOLIO_CONTENT = {
       ],
       coverClass: 'portfolio-cover',
       iconClass: 'fa-solid fa-mobile-screen-button'
+    },
+    {
+      title: 'Bon & Bondoq Coffee Roastery Management System',
+      period: 'May 2026',
+      category: 'Hackathon Mobile & Backend Platform',
+      summary:
+        'Built a digital management system for coffee roasting operations during the Innovate IT Hackathon mobile track.',
+      stack: ['React Native', 'Expo', 'TypeScript', 'NativeWind', 'Laravel', 'MySQL', 'REST APIs'],
+      highlights: [
+        'Developed mobile and backend features for roasting, order preparation, inventory, and distribution workflows across multiple branches.',
+        'Collaborated with a cross-functional technical and marketing team to translate user needs into product features.',
+        'Presented the solution to judges and incorporated feedback into a roadmap for future IoT integration.'
+      ],
+      links: [
+        {
+          label: 'GitHub',
+          url: 'https://github.com/YousefShabib'
+        }
+      ],
+      coverClass: 'portfolio-cover',
+      iconClass: 'fa-solid fa-mug-hot'
     },
     {
       title: 'Playwright TypeScript E2E Framework',
@@ -342,7 +404,7 @@ export const PORTFOLIO_CONTENT = {
     {
       role: 'Public Relationship Team Head',
       organization: 'An-Najah Innovation Park Ambassadors',
-      period: 'Nov 2025 - Present',
+      period: 'Nov 2025 - May 2026',
       summary:
         'Lead PR team activities while supporting the planning, coordination, and execution of university innovation events.',
       bullets: [
@@ -404,6 +466,20 @@ export const PORTFOLIO_CONTENT = {
     }
   ] as readonly LeadershipEntry[],
   awards: [
+    {
+      title: 'TechBridge x Microsoft Amman Hackathon 2026',
+      organization: 'LTUC · Microsoft',
+      date: 'Jun 2026',
+      badge: 'Social Innovation Award',
+      summary:
+        'Won the Social Innovation Award as Team Leader for Edura, a full-stack community service platform built on Microsoft Azure.',
+      bullets: [
+        'Led a cross-functional team through the full product cycle from ideation to deployment.',
+        'Built a web, mobile, and backend platform connecting municipalities and universities to organize and track community engagement activities.'
+      ],
+      iconClass: 'fa-brands fa-microsoft',
+      accent: 'violet'
+    },
     {
       title: 'Green City Challenge',
       organization: 'Ramallah Municipality',

@@ -81,21 +81,21 @@
 }
 
 .role-one {
-  --characters: 20;
+  --characters: 26;
   animation:
     type-role 1.5s steps(var(--characters)) forwards,
     cursor-run 1.5s step-end forwards;
 }
 
 .role-two {
-  --characters: 13;
+  --characters: 20;
   animation:
     type-role 1.1s steps(var(--characters)) 1.65s forwards,
     cursor-run 1.1s step-end 1.65s forwards;
 }
 
 .role-three {
-  --characters: 16;
+  --characters: 30;
   animation:
     type-role 1.25s steps(var(--characters)) 2.85s forwards,
     cursor-blink 760ms step-end 2.85s infinite;

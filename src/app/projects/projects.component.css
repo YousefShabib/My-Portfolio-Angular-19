@@ -1,7 +1,8 @@
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(18.5rem, 1fr));
+  align-items: start;
+  gap: 1rem;
 }
 
 .project-card {
@@ -11,16 +12,16 @@
 
 .project-media {
   position: relative;
-  min-height: 18rem;
+  min-height: 10rem;
   display: grid;
   place-items: center;
-  padding: 2rem;
+  padding: 1rem;
   background: var(--project-cover);
 }
 
 .project-media img {
-  max-width: 62%;
-  max-height: 15rem;
+  max-width: 58%;
+  max-height: 8rem;
   object-fit: contain;
   border-radius: 0.4rem;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
@@ -30,28 +31,32 @@
 .project-mark {
   display: inline-grid;
   place-items: center;
-  width: 7.5rem;
-  height: 7.5rem;
-  border-radius: 1.6rem;
+  width: 4.6rem;
+  height: 4.6rem;
+  border-radius: 1rem;
   border: 1px solid color-mix(in srgb, var(--project-tone) 26%, transparent);
   color: var(--project-tone);
-  font-size: 2.5rem;
+  font-size: 1.65rem;
 }
 
 .project-category {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  padding: 0.6rem 1rem;
+  top: 1rem;
+  right: 1rem;
+  max-width: calc(100% - 2rem);
+  padding: 0.45rem 0.75rem;
   border-radius: 999px;
   background: color-mix(in srgb, var(--project-tone) 16%, rgba(255, 255, 255, 0.04));
   border: 1px solid color-mix(in srgb, var(--project-tone) 20%, transparent);
   color: var(--project-tone);
+  font-size: 0.78rem;
   font-weight: 800;
+  line-height: 1.25;
+  text-align: right;
 }
 
 .project-body {
-  padding: 1.9rem 1.9rem 2rem;
+  padding: 1rem 1rem 1.15rem;
 }
 
 .project-heading-row {
@@ -67,49 +72,78 @@
 }
 
 .project-heading-row h3 {
-  font-size: clamp(1.55rem, 2vw, 2.1rem);
+  font-size: clamp(1.2rem, 1.55vw, 1.55rem);
+  line-height: 1.1;
 }
 
 .project-period {
   color: var(--muted);
+  font-size: 0.9rem;
   font-weight: 800;
   white-space: nowrap;
 }
 
 .project-summary {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   color: var(--muted);
-  font-size: 1.1rem;
-  line-height: 1.75;
+  font-size: 0.94rem;
+  line-height: 1.45;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .project-highlights {
   --list-color: var(--project-tone);
+  margin-top: 0.9rem;
+  gap: 0.4rem;
+  font-size: 0.84rem;
+}
+
+.project-highlights li {
+  line-height: 1.4;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.project-highlights li:nth-child(n + 3) {
+  display: none;
 }
 
 .project-stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
-  margin-top: 1.3rem;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  max-height: 4.3rem;
+  overflow: hidden;
+}
+
+.project-stack .chip {
+  padding: 0.38rem 0.65rem;
+  font-size: 0.82rem;
 }
 
 .project-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.85rem;
-  margin-top: 1.5rem;
+  gap: 0.65rem;
+  margin-top: 1.1rem;
 }
 
 .project-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  min-height: 3rem;
-  padding: 0.85rem 1.15rem;
-  border-radius: 1rem;
+  gap: 0.5rem;
+  min-height: 2.55rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 0.8rem;
   border: 1px solid var(--line);
   color: var(--text);
+  font-size: 0.9rem;
   font-weight: 800;
 }
 
@@ -138,6 +172,11 @@
   --project-cover: linear-gradient(180deg, rgba(139, 92, 246, 0.28), rgba(139, 92, 246, 0.14));
 }
 
+.azure-cover {
+  --project-tone: #2f80ed;
+  --project-cover: linear-gradient(180deg, rgba(47, 128, 237, 0.25), rgba(47, 128, 237, 0.11));
+}
+
 .clinical-cover {
   --project-tone: #0b7fd0;
   --project-cover: linear-gradient(180deg, rgba(11, 127, 208, 0.28), rgba(11, 127, 208, 0.14));
@@ -150,7 +189,7 @@
 
 @media (max-width: 1100px) {
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   }
 }
 
@@ -160,8 +199,8 @@
   }
 
   .project-media {
-    min-height: 14rem;
-    padding: 1.5rem;
+    min-height: 9.5rem;
+    padding: 1rem;
   }
 
   .project-media img {
